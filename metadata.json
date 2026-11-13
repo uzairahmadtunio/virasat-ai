@@ -1,0 +1,6 @@
+{
+  "name": "Virasat AI — Islamic Inheritance & Settlement Platform",
+  "description": "Pakistan's First AI-Explained Islamic Inheritance (Mirath) Calculator & Family Settlement Platform based on Hanafi Fiqh with Takhruj Buy-out Simulator and Official Taqseem-Nama.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

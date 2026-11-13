@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: transparent; padding: 10px; font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body>
+
+  <!-- Brand Logo: 600 x 130 Transparent Canvas with crisp emblem & letterspaced typography -->
+  <div id="clean-logo" style="width: 600px; height: 130px; display: inline-block;">
+    <svg width="600" height="130" viewBox="0 0 600 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="emBg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#022C22"/>
+          <stop offset="60%" stop-color="#064E3B"/>
+          <stop offset="100%" stop-color="#042F2E"/>
+        </linearGradient>
+        <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#FFF5D6"/>
+          <stop offset="35%" stop-color="#D4AF37"/>
+          <stop offset="75%" stop-color="#AA771C"/>
+          <stop offset="100%" stop-color="#E5C158"/>
+        </linearGradient>
+        <filter id="goldGlow">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="softShadow">
+          <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/>
+        </filter>
+      </defs>
+
+      <!-- Left Geometric Islamic Medallion (Center at 65, 65) -->
+      <g transform="translate(65, 65)" filter="url(#softShadow)">
+        <!-- Outer Ring -->
+        <circle cx="0" cy="0" r="50" fill="url(#emBg)" stroke="url(#gold)" stroke-width="2.5"/>
+        <circle cx="0" cy="0" r="43" fill="none" stroke="#D4AF37" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+
+        <!-- Rub el Hizb (Two interlocking squares) -->
+        <rect x="-29" y="-29" width="58" height="58" rx="5" fill="#042F2E" stroke="url(#gold)" stroke-width="2.2"/>
+        <rect x="-29" y="-29" width="58" height="58" rx="5" fill="#042F2E" stroke="url(#gold)" stroke-width="2.2" transform="rotate(45)"/>
+
+        <!-- Radiant Center Star -->
+        <circle cx="0" cy="0" r="16" fill="#022C22" stroke="url(#gold)" stroke-width="1.5"/>
+        <path d="M 0 -13 L 3 -3.5 L 13 0 L 3 3.5 L 0 13 L -3 3.5 L -13 0 L -3 -3.5 Z" fill="url(#gold)" filter="url(#goldGlow)"/>
+        <circle cx="0" cy="0" r="3.5" fill="#FFFFFF"/>
+      </g>
+
+      <!-- Typography Group -->
+      <g transform="translate(135, 74)">
+        <!-- Main Wordmark -->
+        <text x="0" y="0" font-family="'Cinzel', 'Playfair Display', serif" font-size="44" font-weight="800" fill="#022C22" letter-spacing="1.5" filter="url(#softShadow)">VIRASAT</text>
+        <text x="240" y="0" font-family="'Cinzel', 'Playfair Display', serif" font-size="44" font-weight="800" fill="url(#gold)" letter-spacing="1.5" filter="url(#softShadow)">AI</text>
+        
+        <!-- Tagline: Clean, Uncluttered, Distinctly Spaced -->
+        <text x="2" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#064E3B" letter-spacing="3.5">HANAFI ISLAMIC FINTECH</text>
+        <circle cx="180" cy="23" r="2.5" fill="#D4AF37"/>
+        <text x="190" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="10.5" font-weight="600" fill="#059669" letter-spacing="1.5">SHARIAH ENGINE</text>
+      </g>
+    </svg>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-arabic: 'Amiri', serif;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Amiri', serif;
+}
+
+@layer utilities {
+  .font-serif-title {
+    font-family: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.015em;
+    font-weight: 600;
+  }
+  :is([dir="rtl"], [lang="ur"]) .font-serif-title,
+  [dir="rtl"] .font-serif-title {
+    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', 'Amiri', serif !important;
+    letter-spacing: normal !important;
+    line-height: 2;
+  }
+  .font-arabic {
+    font-family: 'Amiri', 'Noto Nastaliq Urdu', 'Noto Sans Arabic', serif;
+  }
+  .font-urdu {
+    font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', 'Amiri', serif;
+    letter-spacing: normal !important;
+  }
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-feature-settings: "tnum";
+    font-variant-numeric: tabular-nums;
+    direction: ltr;
+    display: inline-block;
+    unicode-bidi: isolate;
+  }
+  .gold-shimmer {
+    background: linear-gradient(135deg, #F9F1D8 0%, #E8CD78 50%, #C49826 100%);
+  }
+  .gold-border-gradient {
+    border-image: linear-gradient(to right, #D4AF37, #AA771C) 1;
+  }
+  .obsidian-mesh {
+    background-color: #022C22;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(6, 78, 59, 0.8) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(4, 47, 46, 0.9) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(2, 44, 34, 1) 0px, transparent 60%);
+  }
+}
+
+/* RTL and Urdu Specific enhancements */
+[dir="rtl"] {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', 'Amiri', 'Plus Jakarta Sans', system-ui, sans-serif;
+  text-align: right;
+  line-height: 2.2;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+
+[dir="rtl"] .font-serif-title {
+  font-family: 'Noto Nastaliq Urdu', 'Amiri', 'Noto Sans Arabic', serif;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4 {
+  font-family: 'Noto Nastaliq Urdu', 'Amiri', 'Noto Sans Arabic', serif;
+  line-height: 2.3;
+}
+
+[dir="rtl"] .font-arabic {
+  line-height: 2.2;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  line-height: 1.8;
+}
+
+/* Islamic Geometric lattice background pattern */
+.islamic-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23D4AF37' fill-opacity='0.06' fill-rule='evenodd'%3E%3Cpath d='M30 30L15 15l15-15 15 15-15 15zm0 0l15 15-15 15-15-15 15-15zm-15 0l-15-15 15-15 15 15-15 15zm30 0l15-15-15-15-15 15 15 15z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}

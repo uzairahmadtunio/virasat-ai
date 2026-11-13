@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var _origFetch = typeof window !== 'undefined' && window.fetch ? window.fetch.bind(window) : undefined;
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _origFetch;
+            },
+            set: function(fn) {
+              _origFetch = fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+          if (typeof Window !== 'undefined' && Window.prototype) {
+            try {
+              Object.defineProperty(Window.prototype, 'fetch', {
+                get: function() {
+                  return _origFetch;
+                },
+                set: function(fn) {
+                  _origFetch = fn;
+                },
+                configurable: true,
+                enumerable: true
+              });
+            } catch (_) {}
+          }
+        } catch (_) {}
+      })();
+    </script>
+    <title>Virasat AI — Islamic Inheritance (Mirath) Calculator & Settlement Platform</title>
+    <meta name="description" content="Pakistan's First AI-Explained Islamic Inheritance (Mirath) Calculator & Family Settlement Platform based on Hanafi Fiqh with Takhruj Buy-out Simulator and Official Taqseem-Nama." />
+    <meta property="og:title" content="Virasat AI — Islamic Inheritance (Mirath) Calculator & Settlement Platform" />
+    <meta property="og:description" content="100% Deterministic Hanafi Fiqh Islamic Inheritance calculation with Wise-style asset pipelines, Takhruj house buy-out simulator, and official printable settlement agreements." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/webp" href="/virasat-ai-favicon.webp" />
+    <link rel="apple-touch-icon" href="/virasat-ai-favicon.webp" />
+    <meta property="og:image" content="/virasat-ai-logo.webp" />
+    <meta name="twitter:image" content="/virasat-ai-logo.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#F7F5F0] text-slate-900 antialiased selection:bg-[#D4AF37]/30 selection:text-[#022C22] min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
